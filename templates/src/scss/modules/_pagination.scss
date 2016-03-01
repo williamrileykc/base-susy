@@ -1,0 +1,61 @@
+/*--------------------------*/
+/* Pagination
+/*--------------------------*/
+
+.pagination {
+	@include span(12);
+    display: flex;
+    flex-wrap: wrap;
+    margin:30px 0;
+
+	a {
+	    display: flex;
+	    order: 0;
+	    flex: 0 1 auto;
+	    align-self: auto;
+	    @extend %form-basic-style;
+	    padding: 11px 15px;
+	    @include content-headline($gray-dark);
+	    
+	    &:hover {
+		    background: $gray;
+		    color: $black;
+	    }
+	    
+	    &.disabled {
+		    pointer-events: none;
+			cursor: default;
+			opacity: 0.3;
+	    }
+	    
+	    @include screen-sm-max {
+		    &.first, &.last {
+			    display: none;
+		    }
+	    }
+	}
+}
+
+.pagination--legend {
+	display: flex;
+    order: 0;
+    flex: 1 1 auto;
+    align-self: auto;
+    text-align: center;
+    position: relative;
+    margin: 10px;
+    
+    &::before {
+	    content: " ";
+	    @include centerer();
+	    border-top: 1px solid $gray-darker;
+	    width: 100%;
+    }
+    
+    span {
+	    @include centerer();
+	    background: $white;
+	    padding:10px;
+	    color: $gray-darker;
+    }
+}

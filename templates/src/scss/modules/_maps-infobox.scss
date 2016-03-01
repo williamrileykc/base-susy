@@ -1,0 +1,31 @@
+/*--------------------------*/
+/* Infobox
+/*--------------------------*/
+
+.infobox-wrapper {
+    display:none;
+}
+.infobox {
+    display: block;
+    //margin: 8px 45px 30px;
+    padding: 10px;
+    @include font-body(14px, $white);
+    line-height: 1;
+    text-align: center;
+    background: $black;
+    border-radius: 4px;
+    
+    
+    &::before {
+	    content: '';
+	    position: absolute;
+	    bottom: -10px;
+	    left:50%;
+	    transform: translateX(-50%);
+		width: 0;
+		height: 0;
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;
+		border-top: 10px solid $black;
+    }
+}

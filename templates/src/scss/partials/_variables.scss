@@ -1,0 +1,52 @@
+/*-----------*/
+/* Variables
+/*-----------*/
+
+//Susy Grid
+$susy: (
+	gutter-position: inside-static,
+	container: 1234px,
+	columns: 12,
+	column-width: 134px,
+	gutter: 15px/134px,
+	global-box-sizing: border-box,
+);
+
+//The Grid
+$grid-breakpoints: (
+	xs: 0,
+	sm: 544px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+);
+
+//Colors
+$black:			#000000;
+$white:			#ffffff;
+$blue:			#406779;
+$purple:		#762a62;
+$red:			#b0264a;
+
+$gray-darker:	#808080;
+$gray-dark:		#bfbfbf;
+$gray:			#cccccc;
+$gray-light:	#999999;
+$gray-lighter:	#f0f0f0;
+
+
+//Z-Index Management -- utilizes Sass Maps
+//Easiest way to use is via the mixin: @include z-index(zero);
+$z-index: (
+	heaven					:	9000,
+	header--logo			:	600,
+	mobile-nav				:	500,
+	nav--dropdown			:	400,
+	booking-widget			:	350,
+	footer--sticky			:	300,
+	aboveground				:	100,
+	ground					:	1,
+	zero					:	0,
+	underground				:	-1,
+	hell					:	-9000
+);

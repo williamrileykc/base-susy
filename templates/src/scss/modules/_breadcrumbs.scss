@@ -1,0 +1,41 @@
+/*--------------------------*/
+/* Breadcrumbs
+/*--------------------------*/
+
+.breadcrumbs {
+	@include span(12);
+	list-style: none;
+	padding: 0;
+	color: $black;
+	@include font-size(15px);
+	
+	@include screen-md {
+		@include span(7);
+	}
+	
+	li {
+		display: inline-block;
+		
+		
+		a {
+			color: $gray-darker;
+			text-decoration: underline;
+			
+			&:hover, &:active, &:focus {
+				color: $purple;
+			}
+		}
+		
+		&:last-child {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			max-width: 370px;
+			margin-bottom: -4px;
+		}
+	}
+	
+	li +  li {
+		padding-left: 15px;
+	}
+}

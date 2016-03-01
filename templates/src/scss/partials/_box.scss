@@ -1,0 +1,16 @@
+/**********/
+/* Box
+/**********/
+
+@mixin box() {
+	@include gutters();
+	padding: 15px 0;
+	@include font-body(14px, $gray-darker);
+	background-color: $gray-lighter;
+	border: 1px solid $gray-darker;
+	border-radius: 4px;
+}
+
+%box {
+	@include box();
+}

@@ -1,0 +1,65 @@
+/*--------------*/
+/* Forms
+/*--------------*/
+
+%form-basic-style {
+	border: 1px solid #c0c0c0;
+	border-bottom-width: 3px;
+	border-radius: 4px;
+	padding: 11px;
+	
+	&:focus {
+		outline: none;
+	}
+}
+
+input {
+	@extend %form-basic-style;
+	
+}
+
+* {
+	outline: none; //This is possibly a really bad idea, esp for accessibility. We may want to remove this.
+}
+
+
+
+
+//WASHINGTON OVERWRITE
+
+.select2-container--default .select2-selection--single {
+	position: relative;
+	@extend %form-basic-style;
+    padding: 20px 11px;
+    
+    &::after {
+		@include iconfont($icon-caret-down, 7px);
+	    position: absolute;
+	    right: 13px;
+	    top: 8px;
+		border-left: 1px solid $gray-dark;
+		padding: 8px 0 10px 15px;
+    }
+}
+.select2-container--default.select2-container--open .select2-selection--single {
+	    &::after {
+		@include iconfont($icon-caret-up, 7px);
+    }
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+	margin-top: -12px;
+	text-transform: uppercase;
+    font-weight: 900;
+	@include font-size(14px);
+}
+
+.select2-results__option {
+	text-transform: uppercase;
+    font-weight: 900;
+	@include font-size(14px);
+}
+
+.select2-selection__arrow {
+	display: none;
+}

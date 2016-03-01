@@ -1,0 +1,38 @@
+/*--------------------------*/
+/* Maps
+/*--------------------------*/
+
+.map--wrapper {
+	width:100%;
+}
+
+.map {
+	border: 1px solid $gray-dark;
+	width: 100%;
+	
+	.business-listings & {
+		display: none;
+		
+		@include screen-md {
+			display: block;
+			height: 500px;
+		}
+	}
+	
+	.map--nearby & {
+		width: 100%;
+		height: 350px;
+	}
+
+}
+
+.map--nearby {
+	@include container();
+	
+	h3 {
+		@include span(8);
+		@include font-script(32px);
+		color: $blue;
+	}
+}
+

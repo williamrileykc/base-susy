@@ -1,0 +1,88 @@
+/*--------------------------*/
+/* Upcoming Events
+/*--------------------------*/
+
+.upcoming-events {
+	@include container();
+	
+}
+
+.upcoming-events--headline {
+	@include content-headline();
+}
+
+.upcoming-events--list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	
+	li {
+		@include clearfix();
+		display: block;
+		border-top: 1px solid $gray-dark;
+		margin: 0;
+		padding-top: 20px;
+		
+		@include screen-sm {
+			margin-top:20px;
+		}
+	}
+}
+
+.upcoming-events--list--item {
+	@include span(12);
+	padding-left: 0;
+	
+	@include screen-sm {
+		@include span(9);
+		padding-left: 0;
+	}
+	
+	@include screen-md {
+		@include span(8);
+		padding-left: 0;
+	}
+	@include screen-lg {
+		@include span(9);
+		padding-left: 0;
+	}
+}
+
+.upcoming-events--date, .upcoming-events--time {
+	@include font-body(13px, $gray-darker);
+}
+
+.upcoming-events--time {
+	&::before {
+		content: "• ";
+	}
+}
+
+.upcoming-events--title {
+	display: block;
+	@include font-body(22px, $purple);
+	font-weight: 700;
+}
+
+.upcoming-events--image {
+	display: none;
+	
+	@include screen-sm {
+		display: block;
+		@include span(3);
+		padding-right: 0;
+	}
+	
+	@include screen-md {
+		@include span(4);
+		padding-right: 0;
+	}
+	@include screen-lg {
+		@include span(3);
+		padding-right: 0;
+	}
+	
+	picture, img {
+		max-width: 100%;
+	}
+}

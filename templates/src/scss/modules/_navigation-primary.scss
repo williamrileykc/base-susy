@@ -1,0 +1,204 @@
+/*--------------------------*/
+/* Navigation Primary
+/*--------------------------*/
+
+.navigation--primary {
+	display: inline-block;
+	float: left;
+
+	.header & {
+		display: none;
+
+		@include screen-md {
+			display: block;
+		}
+	}
+	& > ul {
+		list-style: none;
+	    margin: 16px 0 0;
+		padding: 0;
+		
+		@include screen-md-only {
+			margin: 12px 0 0;
+		}
+	}
+}
+
+.header.search-open .navigation--primary {
+	@include screen-md {
+		display: none;
+	}
+}
+li.navigation--primary--item {
+	position: relative;
+
+	@include screen-md {
+		display: inline-block;
+		padding-bottom: 3px;
+		
+		& > a:after{
+			display: none;
+			@include iconfont($icon-caret-down, 10px);
+			position: absolute;
+			bottom:9px;
+			left:50%;
+			transform: translateX(-50%) rotate(180deg);
+			color: $blue;
+			
+			@include screen-lg {
+				bottom:3px;
+			}
+		}
+		
+		&:hover, &.active {
+			& > a {
+				color:$blue;
+
+				&:after {
+					display:block;
+				}
+			}
+		}
+		&:hover {
+			.navigation--dropdown {
+				display: block;
+
+				&.navigation--dropdown__neighborhoods {
+					display: flex;
+				}
+			}
+		}
+		& + & {
+			margin-left: 22px;
+
+			@include screen-md-only {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	& > a {
+		display: block;
+		@include font-body(24px);
+		margin-bottom: 20px;
+		color: $black;
+		font-weight: 900;
+		letter-spacing: -1.6px;
+		
+		@include screen-md-only {
+			@include font-size(16px);
+			letter-spacing: -0.5px;
+		}
+		@include screen-lg-only {
+			@include font-size(20px);
+		}
+	}
+}
+
+.navigation--dropdown {
+	@include gutters;
+	@include z-index(nav--dropdown);
+	display: none;
+	position: absolute;
+	top: 43px;
+	left: 50%;
+	transform: translateX(-50%);
+	min-width: 275px;
+	padding-top: 20px;
+    background: $white;
+    
+    @include screen-lg {
+	    top: 49px;
+    }
+    
+    & > ul {
+	    list-style: none;
+	    padding: 0;
+	    margin-bottom: 20px;
+    }
+    
+    img {
+		max-width: 100%;
+	}
+}
+
+.navigation--dropdown__neighborhoods {
+	width: 100%;
+	left: 0;
+	transform: none;
+	padding-top: 0;
+	background: none;
+	flex-wrap: wrap;
+}
+
+.menu-neighborhood--map {
+	position: relative;
+	display: none;
+	padding-top:20px;
+	background: $white;
+	padding-bottom: 20px;
+	
+	@include screen-lg {
+		@include span(3);
+		display: flex;
+	}
+
+	&:before {
+		@include iconfont($icon-menu-neighborhoods--map, 286px);
+		@include centerer();
+		color: $gray;
+
+	}
+	&:after {
+		@include centerer();
+		color: $purple;
+	}
+
+	&.adams-morgan:after	{ @include iconfont($icon-menu-neighborhoods--sample, 286px); }
+	&.anacostia:after		{ @include iconfont($icon-menu-neighborhoods--sample2, 286px); }
+}
+.menu-neighborhood--nav {
+	@include span(8);
+	display: flex;
+	padding-top:40px;
+	background: $white;
+	padding-bottom: 20px;
+	
+	@include screen-lg {
+		@include span(6);
+	}
+	
+	ul {
+		list-style: none;
+		padding: 0;
+		column-count: 2;
+	}
+}
+.menu-neighborhood--feature {
+	@include span(4);
+	display: flex;
+	padding-top:40px;
+	background: $white;
+	padding-bottom: 20px;
+	
+	@include screen-lg {
+		@include span(3);
+	}
+}
+
+.navigation--primary--subitem {
+	@include font-size(20px);
+	margin-bottom: 5px;
+	letter-spacing: -0.4px;
+	font-weight: 900;
+}
+
+.navigation--feature--headline {
+	display: block;
+	margin: 4px 0 0;
+    @include font-size(14px);
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    font-weight: 900;
+}

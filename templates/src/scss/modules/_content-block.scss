@@ -1,0 +1,26 @@
+/*--------------------------*/
+/* Content Block
+/*--------------------------*/
+
+.content-block {
+
+	@include link-decoration(underline);
+	
+}
+
+.content-headline {
+	@include content-headline();
+}
+
+a.map-link {
+	text-decoration: underline;
+	@include font-body(15px, $purple);
+	
+	&::before {
+		@include iconfont($icon-location, 11px);
+		display: inline-block;
+		text-decoration: none;
+		padding-right: 5px;
+		color: $gray-light;
+	}
+}

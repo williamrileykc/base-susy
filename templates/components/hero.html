@@ -1,0 +1,142 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Hero | Washington DC</title>
+        <meta name="robots" content="index,follow" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="/sites/all/themes/custom/washington/media/images/icons/washington-dc.ico" />
+
+		<link rel="stylesheet" href="/sites/all/themes/custom/washington/css/styles.css">
+
+        <script src="/sites/all/themes/custom/washington/js/modernizr.js"></script>
+    </head>
+    <body class="visit-dc">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+		
+		
+		<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=176775569005193";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+		
+		<!--
+		There are essentially 3 versions of the "hero" element, not including the home page hero or the map hero, which are pretty unique from a code level.
+		
+		These three share a pretty much identical code structure, but only differ in the content they hold.
+		
+		They all have an h1. The variable content is either an h2 or a unordered list of attributes, which to my understand is only used on neighborhood overview pages.
+		
+		The third piece of variable content is a video button.
+		
+		I'll show examples of each below.
+		-->
+		
+		
+		<!-- This is the standard hero. -->
+		<div class="hero">
+			<div class="hero--content">
+				<h1>Economy</h1>
+				<h2>Stay & discover budget DC hospitality</h2>
+			</div>
+			
+			<div class="sharethis"></div>
+			
+			<picture>
+				<source srcset="//unsplash.it/1600/432?image=985" media="(min-width: 1200px)">
+				<source srcset="//unsplash.it/1200/432?image=985" media="(min-width: 992px)">
+				<source srcset="//unsplash.it/992/357?image=985"  media="(min-width: 768px)">
+				<source srcset="//unsplash.it/768/300?image=985"  media="(min-width: 544px)">
+				   <img srcset="//unsplash.it/544/300?image=985" alt="Hero Alt Text" class="hero--img" />
+			</picture>
+		</div>
+		
+		
+		
+		
+		
+		
+		<hr class="cutups-spacer" data-notice="THIS IS NOT PART OF THE CUTUP!" />
+		
+		
+		
+		
+		
+		
+		
+		<!-- This is the hero used on neighborhood overview pages. -->
+		<div class="hero">
+			<div class="hero--content">
+				<h1>Dupont Circle</h1>
+				<ul class="hero--attributes">
+					<li>Nightlife</li>
+					<li>Great Transit</li>
+					<li>Shopping</li>
+					<li>Dining</li>
+					<li>Touristy</li>
+					<li>Loved by Locals</li>
+				</ul>
+			</div>
+			
+			<div class="sharethis"></div>
+			
+			<picture>
+				<source srcset="//unsplash.it/1600/432?image=916" media="(min-width: 1200px)">
+				<source srcset="//unsplash.it/1200/432?image=916" media="(min-width: 992px)">
+				<source srcset="//unsplash.it/992/357?image=916"  media="(min-width: 768px)">
+				<source srcset="//unsplash.it/768/300?image=916"  media="(min-width: 544px)">
+				   <img srcset="//unsplash.it/544/300?image=916" alt="Hero Alt Text" class="hero--img" />
+			</picture>
+		</div>
+		
+		
+		
+		
+		
+		
+		<hr class="cutups-spacer" data-notice="THIS IS NOT PART OF THE CUTUP!" />
+		
+		
+		
+		
+		<!-- This is the hero used with a video. -->
+		<div class="hero">
+			<div class="hero--content">
+				<h1>Meet Me In DC</h1>
+				<h2>Lorem ipsum dolor sit amet consectetur</h2>
+				<!-- <button class="btn--play videoplayer" data-video="https://www.youtube.com/watch?v=Q3VjaCy5gck" data-source="youtube">YouTube</button> -->
+				<button class="btn--play videoplayer" data-video="https://www.facebook.com/facebook/videos/10153231379946729/" data-source="facebook">Facebook</button>
+			</div>
+			
+			<div class="sharethis"></div>
+			
+			<picture>
+				<source srcset="//unsplash.it/1600/432?image=883" media="(min-width: 1200px)">
+				<source srcset="//unsplash.it/1200/432?image=883" media="(min-width: 992px)">
+				<source srcset="//unsplash.it/992/357?image=883"  media="(min-width: 768px)">
+				<source srcset="//unsplash.it/768/300?image=883"  media="(min-width: 544px)">
+				   <img srcset="//unsplash.it/544/300?image=883" alt="Hero Alt Text" class="hero--img" />
+			</picture>
+		</div>
+		
+		
+		
+		
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="/sites/all/themes/custom/washington/js/scripts.js"></script>
+
+    </body>
+</html>

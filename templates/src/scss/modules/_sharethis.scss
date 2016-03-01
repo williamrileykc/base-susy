@@ -1,0 +1,129 @@
+/*--------------------------*/
+/* Share This
+/*--------------------------*/
+
+
+/*
+	TO DO:
+	Still need ot adjust the z-index off the networks on open. But not today. Not today.
+*/
+	
+.sharethis {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	color: $blue;
+	cursor: pointer;
+	opacity: 1;
+	transition: all ease-in-out 0.3s;
+	
+	.hero & {
+		color: $white;
+		text-shadow: $black 0px 0px 20px;
+	}
+	
+	@include screen-md {
+		top: 30px;
+		right: 30px;		
+	}
+	
+	&::before {
+		content: "Share This";
+		@include font-body(13px);
+		text-transform: uppercase;
+		margin-right: 15px;
+		font-weight: 600;
+	}
+	
+	&::after {
+		@include iconfont($icon-share, 14px);
+		color: $gray-light;
+	}
+	
+	.hero &::after {
+		color: $white;
+	}
+	
+	&.open {
+		
+		&::before, &::after {
+			opacity: 0;
+			transition: opacity ease-in-out 0.5s;
+		}
+	}
+}
+
+.sharethis--networks {
+	position: absolute;
+	top: 4px;
+    right: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    min-width: 150px;
+    text-align: right;
+    transform: translateX(-9999px);
+    
+    .hero &, .hero & a {
+		color: $white;
+		//text-shadow: $black 0px 0px 20px;
+	}
+    
+    .sharethis.open & {
+	    transform: none;
+    }
+    
+    li {
+	    display: inline-block
+    }
+    
+}
+
+%sharethis--socialnetwork {
+	transition: all ease-in-out 0.2s;
+	margin-left: 15px;
+	opacity: 0;
+	
+	.sharethis.open & {
+		animation-duration: 1s;
+		animation-name: sharethis--appear;
+		animation-fill-mode: forwards;
+	}
+	
+	&:hover {
+		color: $red;
+	}
+	
+}
+
+@keyframes sharethis--appear {
+  0% {
+    opacity: 0;
+    display: block;
+  }
+
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+
+.sharethis--facebook {
+	@extend %sharethis--socialnetwork;
+	animation-delay: 0.6s;
+	
+	&::before { @include iconfont($icon-social-facebook, 20px); }
+	
+}
+.sharethis--twitter {
+	@extend %sharethis--socialnetwork;
+	animation-delay: 0.4s;
+	
+	&::before { @include iconfont($icon-social-twitter, 20px); }
+}
+.sharethis--pinterest {
+	@extend %sharethis--socialnetwork;
+	animation-delay: 0.2s;
+	
+	&::before { @include iconfont($icon-social-pinterest, 20px); }
+}

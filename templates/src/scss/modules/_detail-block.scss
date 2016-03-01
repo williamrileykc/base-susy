@@ -1,0 +1,149 @@
+/*--------------------------*/
+/* Detail Block
+/*--------------------------*/
+
+.detail-block {
+	@include container();
+	margin: 30px 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	
+	h1 {
+		margin: 0 0 30px;
+		@include font-headline(32px, $red);
+		text-align: center;
+		
+		@include screen-md {
+			@include font-size(40px);
+		}
+		@include screen-lg {
+			@include font-size(55px);
+		}
+	}
+	
+	p {
+		@include link-decoration(underline);
+	}
+	
+}
+
+.detail-block--date-well {
+	@include box();
+	
+	.detail-block--date-well--urgency {
+		@include font-script(36px, $blue);
+		width: 50%;
+		margin-top: 5px;
+		float: left;
+		text-align: center;
+		border-right: 1px solid $gray-light;
+	}
+	
+	.detail-block--date-well--date {
+		text-align: center;
+		line-height: 1.5;
+	}
+	
+}
+
+.detail-block--primary {
+	@include span(12);
+	display: flex;
+    flex-direction: column;
+	
+	@include screen-md {
+		@include span(7);
+	}
+	@include screen-lg {
+		@include span(8);
+	}
+}
+
+.detail-block--secondary {
+	@include span(12);
+	position: relative;
+	display: flex;
+    flex-direction: column;
+	
+	@include screen-md {
+		@include span(5);
+	}
+	@include screen-lg {
+		@include span(4);
+	}
+	
+	img {
+		max-width: 100%;
+	}
+}
+
+
+.detail-block--contact {
+	@include box();
+	position: relative;
+	margin-left: 16.75px;
+	margin-right: 16.75px;
+	@include z-index(ground);
+	
+	picture + & {
+		margin-top: -60px;
+	}
+		
+	p {
+		
+	}
+	
+	.btn {
+		display: inline-block;
+		@include font-size(16px);
+		margin-bottom: 20px;
+	}
+}
+
+.detail-block--tag-cloud {
+	list-style: none;
+	margin: 0 0 15px;
+	padding: 0;
+	
+	li {
+		display: inline-block;
+		
+		a {
+			@include content-headline($purple);
+			text-transform: uppercase;
+			font-weight: 700;
+			
+			&::after {
+				content:", ";
+			}
+		}
+		
+		&:last-child {
+			a {
+				&::after {
+					content: none;
+				}
+			}
+		}
+	}
+}
+
+.detail-block--contact--title {
+	@include content-headline();
+}
+
+.detail-block--contact--social {
+	list-style: none;
+	margin: 7px 0 0;
+	padding: 0;
+	@include font-size(20px);
+	
+	li {
+		display: inline-block;
+		margin-right: 10px;
+		
+		a {
+			color: $gray-light;
+		}
+	}
+}

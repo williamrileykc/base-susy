@@ -1,0 +1,21 @@
+/*--------------------------*/
+/* Data Block
+/*--------------------------*/
+
+.data-block {
+	@include container(12);
+	@include font-body(15px)
+}
+
+.data-block--title {
+	@include span(3);
+	padding-left: 0;
+	margin-bottom: 30px;
+	@include font-body(15px);
+	font-weight: 700;
+}
+
+.data-block--content {
+	@include span(9);
+	@include font-body(18px);
+}

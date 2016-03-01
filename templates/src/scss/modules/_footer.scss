@@ -1,0 +1,185 @@
+/*--------------------------*/
+/* Footer
+/*--------------------------*/
+
+.footer {
+	@include clearfix();
+
+}
+
+.footer--sticky {
+	background: #e6e6e6;
+	width: 100%;
+
+	@include screen-md {
+		position: fixed;
+		bottom: 0;
+		height: 64px;
+		@include z-index(footer--sticky);
+	}
+
+	.footer.in-view & {
+		position: relative;
+	}
+
+	a {
+		color: $purple;
+
+		&:hover, &:active, &:focus {
+			color: darken($purple, 15);
+		}
+	}
+}
+
+.footer--sticky--links {
+	@include span(12);
+	@include gutters();
+	list-style: none;
+	margin: 18px 0 0;
+	padding: 0;
+	text-align: center;
+
+	@include screen-md {
+		@include span(7);
+		float: left;
+		text-align: left;
+	}
+
+	li {
+		display: block;
+		margin-right: 10px;
+
+		@include screen-sm {
+			display: inline-block;
+		}
+
+		a {
+			@include content-headline($purple);
+			margin-right: 10px;
+			letter-spacing: 0.75px;
+		}
+	}
+}
+
+
+.footer--social {
+	@include span(12);
+	@include gutters();
+	list-style: none;
+	margin: 13px 0 10px;
+	padding: 0;
+	text-align: center;
+	
+	@include font-size(35px);
+
+	@include screen-md {
+		@include span(5);
+		float: right;
+		text-align: right;
+	}
+
+	li {
+		display: inline-block;
+		margin-left: 10px;
+	}
+}
+
+
+.footer--wrapper {
+	background: $purple;
+	width: 100%;
+	color: $white;
+	@include font-body(20px);
+	padding: 35px 0;
+	margin-top:64px;
+
+	.footer.in-view & {
+		margin-top: 0;
+	}
+
+	a {
+		color: $white;
+
+		&:hover, &:active, &:focus {
+			color: darken($white, 25);
+		}
+	}
+
+}
+
+.footer--block {
+	@include container();
+	position: relative;
+}
+
+
+
+
+.footer--block--item {
+	@include span(12);
+	text-align: center;
+	color: $white;
+
+	@include screen-md {
+		@include span(3);
+		text-align: left;
+	}
+
+	& ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		& > li {
+			margin-bottom: 10px;
+
+			& ul li {
+				margin-bottom: 5px;
+
+				a {
+					@include font-body(15px);
+				}
+			}
+		}
+	}
+
+	p {
+		@include font-body(15px);
+		margin: 15px 0 0;
+	}
+}
+
+
+.footer--logo {
+	position: relative;
+	display: block;
+
+	&::before {
+		@include iconfont($icon-logo-washington, 83px);
+		display: block;
+		margin-bottom: 15px;
+		color: $white;
+	}
+}
+
+.footer--partners {
+	background: #e6e6e6;
+	width: 100%;
+
+	.footer--block {
+		height: 85px;
+
+		.block > p {
+			margin: 0;
+		}
+	}
+}
+
+.partners--headline {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		@include gutters();
+		@include content-headline($purple);
+		margin-right: 10px;
+}

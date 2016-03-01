@@ -1,0 +1,142 @@
+/*--------------------------*/
+/* Business Listings
+/*--------------------------*/
+
+.business-listings {
+	@include container();
+	margin: 30px 0;	
+	counter-reset: business-listings--item 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.business-listings--primary {
+	@include span(12);
+	display: flex;
+	flex-direction: column;
+	
+	@include screen-lg {
+		@include span(6);
+	}
+}
+
+.business-listings--secondary {
+	@include span(12);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	
+	@include screen-lg {
+		@include span(6);
+	}
+}
+
+.scroller {
+	width: 100%;
+	
+	.business-listings.in-view & {
+		position: fixed;
+	}
+	.business-listings.in-view.bottom-in-view & {
+		position: absolute;
+		bottom: 0;
+	}
+}
+
+.business-listings--item {
+	@include clearfix();
+	position: relative;
+	margin: 0;
+	padding: 30px 0 30px 40px;
+	border-top: 1px solid $gray-dark;
+	
+	&::before {
+		content: counter(business-listings--item);
+		position: absolute;
+		top:15px;
+		left:0;
+		@include font-script(40px, $blue);
+		counter-increment: business-listings--item 1;	
+	}
+	
+	&[data-listing="sponsored"] {
+
+		&::before {
+			@include iconfont($icon-star, 18px);
+			position: absolute;
+			top: 30px;
+			left: 0;
+			color: $blue;
+			counter-reset: business-listings--item 0;
+		}
+		
+		.business-listings--item--title::before {
+			content: "Sponsored: ";
+			color: $gray-darker;
+		}	
+	}
+
+	
+	.map-link {
+		display: block;
+	}
+	
+	.btn {
+		display: inline-block;
+		margin-top:15px;
+	}
+}
+
+
+.business-listings--item--content {
+	@include span(12);
+	padding-left:0;
+
+	@include screen-sm {
+		@include span(8);		
+		padding-left:0;
+	}
+}
+
+.business-listings--item--image {
+	display: none;
+	
+	@include screen-sm {
+		@include span(4);
+		padding-left:0;
+		padding-right: 0;
+		display: block;
+	}
+	
+	img {
+		max-width: 100%;
+		float: right;
+	}
+}
+
+.business-listings--item--title {
+	@include font-body(22px, $purple);
+}
+
+.business-listings--item--address {
+	display: block;
+	@include font-body(15px, $gray-darker);
+}
+
+.business-listings--item--rates {
+	display: block;
+	margin-top: 10px;
+	color: $gray-darker;
+	font-style: italic;
+	
+	@include screen-md {
+		display: inline;
+		margin-top: 0;
+		
+		.btn + & {
+			margin-left: 10px;
+		}
+	}
+	
+	
+}

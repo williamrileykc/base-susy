@@ -1,0 +1,260 @@
+/*--------------------------*/
+/* Header
+/*--------------------------*/
+
+.header {
+	background: $white;
+	border-bottom: 3px solid $gray;
+}
+
+.header--block {
+	@include container();
+	position: relative;
+	height: 73px;
+	padding-left: (174px + gutter());
+	transition: all ease-in-out 0.3s;
+	
+	@include screen-md {
+		padding-left: (100px + gutter());
+		height: 92px;
+	}
+	@include screen-lg {
+		padding-left: (174px + gutter());
+		height: 102px;
+	}
+}
+
+.header--logo {
+	display: block;
+	position: absolute;
+	top:0;
+	left: gutter();
+	width: 85px;
+	height: 85px;
+	background: $blue;
+	@include z-index(header--logo);
+	transition: all ease-in-out 0.3s;
+	
+	@include screen-sm-max {
+		.header.search-open & {
+			transform: translateY(-100%);
+			transition: all ease-in-out 0.3s;
+		}
+	}
+	
+	@include screen-md {
+		width: 80px;
+		height: 104px;
+		
+	}
+	
+	@include screen-lg {
+		width: 156px;
+		height: 114px;
+		
+	}
+	
+	&::before {
+		@include iconfont($icon-logo-washington, 50px);
+		@include centerer();
+		color: $white;
+		transition: all ease-in-out 0.3s;
+
+		@include screen-md {
+			@include font-size(48px);
+		}
+		@include screen-lg {
+			@include font-size(83px);
+		}
+	}
+}
+
+.header--row {
+	@include clearfix();
+}
+
+.header--utilities {
+	@include gutters;
+	float: right;
+}
+
+.utility-links {
+	display: none;
+	margin:0;
+	list-style: none;
+	
+	@include screen-md {
+		display: inline-block;
+	}
+	
+	li {
+		display: inline-block;
+		@include font-size(13px);
+		
+		a {
+			text-decoration: underline;
+		}
+	}
+	
+	li + li {
+		margin-left: 10px;
+	}
+}
+
+
+.header--toolbox {
+	@include gutters;
+	float: right;
+	margin-top:23px;
+	
+	@include screen-md {
+		margin-top: 8px;
+	}
+	
+	@include screen-lg {
+		margin-top: 0px;
+	}
+}
+
+.mobile-nav--trigger {
+	display: inline-block;
+	color: $gray-darker;
+	margin-left: 15px;
+	cursor: pointer;
+	transition: all ease-in-out 0.3s;
+	transition-delay: 0.2s;
+	
+	@include screen-sm-max {
+		.header.search-open & {
+			transform: translateX(400%);
+			transition: all ease-in-out 0.3s;
+			transition-delay: 0.1s;
+		}
+	}
+	
+	@include screen-md {
+		display: none;
+	}
+	
+	&:before {
+		@include iconfont($icon-menu, 26px);
+	}
+}
+
+
+.header--search {
+	position: absolute;
+    left: 15px;
+    top: 15px;
+    transform: translateX(-125%);
+    transition: all ease-in-out 0.3s;
+    transition-delay: 0s;
+    
+    @include screen-md {
+		position: relative;
+		left:auto;
+		top: inherit;
+		display: none;
+		float: left;
+		transform: none;
+	}
+	
+	.header.search-open & {
+		display: inline-block;
+		transition: all ease-in-out 0.3s;
+		
+		@include screen-sm-max {
+			transform: translateX(0);
+			transition: all ease-in-out 0.3s;
+			transition-delay: 0.3s;
+		}
+	}
+}
+
+
+.header--search--trigger {
+	display: inline-block;
+	color: $gray-darker;
+	cursor: pointer;
+	transition: all ease-in-out 0.3s;
+	transition-delay: 0.2s;
+	
+	.header.search-open & {
+		@include screen-sm-max {		
+			transform: translateX(400%);
+			transition: all ease-in-out 0.3s;
+			transition-delay: 0.1s;
+		}
+		display: none;
+	}
+	
+	&:active, &:focus {
+		background: transparent;
+		outline: none;
+	}
+	
+	&:hover {
+		cursor: pointer;
+		color: $blue;
+	}
+	&:before {
+		@include iconfont($icon-magnifying-glass, 26px);
+		
+		
+		@include screen-md {
+			@include font-size(16px);
+			padding: 15px;	
+		}
+	}
+	
+}
+
+.header--search--field {
+	padding: 11px 60px;
+	width: 100%;
+}
+
+.header--search--submit {
+	position: absolute;
+	top:9px;
+	right: 15px;
+	color: $gray-dark;
+	border: none;
+	background: transparent;
+	padding: 0;
+	
+	&:hover {
+		cursor: pointer;
+		color: $blue;
+		background: transparent;
+	}
+	
+	&::before {
+		@include iconfont($icon-arrow-right, 20px);
+		border-left: 1px solid $gray-dark;
+		padding: 2px 0 2px 15px;
+	}
+}
+
+.header--search--close {
+	position: absolute;
+	top:12px;
+	left: 15px;
+	color: $gray-dark;
+	
+	&:focus {
+		outline: none;
+	}
+	
+	&:hover {
+		cursor: pointer;
+		color: $blue;
+	}
+	
+	&::before {
+		@include iconfont($icon-close, 20px);
+		border-right: 1px solid $gray-dark;
+		padding: 2px 15px 2px 0;
+	}
+}
+

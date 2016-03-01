@@ -1,0 +1,20 @@
+/*--------------------------*/
+/* Social
+/*--------------------------*/
+
+.social--facebook::before		{ @include iconfont($icon-social-facebook); }
+.social--twitter::before		{ @include iconfont($icon-social-twitter); }
+.social--instagram::before		{ @include iconfont($icon-social-instagram); }
+.social--pinterest::before		{ @include iconfont($icon-social-pinterest); }
+.social--youtube::before		{ @include iconfont($icon-social-youtube); }
+.social--tripadvisor::before	{ @include iconfont($icon-social-tripadvisor); }
+
+
+
+
+.social--circle--facebook::before		{ @include iconfont($icon-social-circle-facebook); }
+.social--circle--twitter::before		{ @include iconfont($icon-social-circle-twitter); }
+.social--circle--instagram::before		{ @include iconfont($icon-social-circle-instagram); }
+.social--circle--pinterest::before		{ @include iconfont($icon-social-circle-pinterest); }
+.social--circle--youtube::before		{ @include iconfont($icon-social-circle-youtube); }
+.social--circle--tripadvisor::before	{ @include iconfont($icon-social-circle-tripadvisor); }

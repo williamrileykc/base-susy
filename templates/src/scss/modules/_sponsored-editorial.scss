@@ -1,0 +1,40 @@
+/*--------------------------*/
+/* Sponsored Editorial
+/*--------------------------*/
+
+.sponsored-editorial {
+	margin: 30px 0;
+	
+	@include screen-md {
+		.detail-block--secondary & {
+			position: absolute;
+			bottom: 0;
+		}
+	}
+	
+	.content-headline {
+		color:$gray-darker;
+	}
+	
+}
+
+.sponsored-editorial--item {
+	@include clearfix();
+	margin-top: 10px;
+	
+	picture, img {
+		float: left;
+		margin-right: 15px;
+	}
+}
+
+.sponsored-editorial--title {
+	@include content-headline($purple);
+	display: block;
+	line-height: 1;
+}
+
+.sponsored-editorial--blurb {
+	line-height: 1;
+    margin: 10px 0 0;
+}

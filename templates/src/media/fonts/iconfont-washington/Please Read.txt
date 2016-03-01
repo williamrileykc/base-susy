@@ -1,0 +1,7 @@
+When updating the iconfont from icomoon, ALWAYS include the newly generated selection.json from the zip file.
+
+If the icomoon library ever gets completely borked (and it's happened before), the library can be regenerated from the selection.json (as long as you, young developer, remembered to update it last time you updated the font.)
+
+It's in your hands.
+
+Don't disappoint me.

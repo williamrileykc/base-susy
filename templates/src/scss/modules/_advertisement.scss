@@ -1,0 +1,19 @@
+/*--------------------------*/
+/* Advertisement
+/*--------------------------*/
+
+.advertisement {
+	position: relative;
+	display: inline-block;
+	margin: 45px 0 30px;
+	
+	
+	&::before {
+		content: 'Advertisement';
+		position: absolute;
+		top: -25px;
+		left: 50%;
+		transform: translateX(-50%);
+		@include font-body(12px, $gray-dark);
+	}
+}

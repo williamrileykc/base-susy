@@ -1,0 +1,68 @@
+/*--------------------------*/
+/* Navigation Secondary
+/*--------------------------*/
+
+.navigation--secondary {
+	display: inline-block;
+	float: left;
+	
+	.header & {
+		display: none;
+		
+		@include screen-lg {
+			display: block;	
+		}
+		@include screen-md-only {
+			//display: none; //TEMP OFF
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin: 10px 0 0;
+		padding: 0;
+	}
+	li {
+		&.active a {
+			color: $black;
+		}	
+		@include screen-md {
+			display: inline-block;
+		}
+	}
+	li + li {
+		@include screen-md {
+			margin-left: 25px;
+		}
+	}
+	a {
+		@include content-headline($gray-light);
+		
+		&:hover {
+			color: $black;
+		}
+	}
+}
+
+.header .navigation--secondary--selector {
+	display: none;
+	@include screen-md-only {
+			display: inline-block;
+			min-width: 150px;
+			margin-top: 5px;
+		}
+	
+	.select2-container--default .select2-selection--single {
+	    padding: 11px 11px;
+	    
+	    &::after {
+	        padding: 4px 0px 3px 15px;
+	        top: 5px;
+	    }
+	}
+}
+
+
+.audience-selector--selector {
+	width: 100%;
+}
